@@ -1,9 +1,12 @@
 import string
 
 
-def caesar():
-    return string.ascii_lowercase
+def caesar(shift: int) -> str:
+    alphabet = string.ascii_lowercase
+    shifted_alphabet = alphabet[shift:] + alphabet[:shift]
+    return shifted_alphabet
 
 
 if __name__ == '__main__':
-    print(caesar())
+    user_shift = int(input("Enter a shift: "))
+    print(caesar(user_shift))
